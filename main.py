@@ -88,23 +88,43 @@ def collect_twitter_network(target_username, bio_keyword):
     return user_df, extracted_user_df
 
 
+def explore_user_network(user_dataframe):
+    dfs = []
+    for username in user_dataframe.username.tolist():
+        try:
+            _udf, _edf = collect_twitter_network(username, KEYWORD)
+            dfs.append(_edf)
+        except:
+            break
+    return pd.concat(dfs)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='search follow network using keyword in twitter')
     parser.add_argument('--username', help='twitter username', type=str)
     parser.add_argument('--keyword', help='keyword for search in bio', type=str)
+    parser.add_argument('--depth', help='depth of explore in social graph', default=3, type=int)
     args = parser.parse_args()
 
     TARGET_USERNAME = args.username 
     KEYWORD = args.keyword
-    print(TARGET_USERNAME, KEYWORD)
+    DEPTH = args.depth
+    print(TARGET_USERNAME, KEYWORD, DEPTH)
  
     udf, edf = collect_twitter_network(TARGET_USERNAME, KEYWORD)
-    udf_list = [udf]
-    edf_list = [edf]
-    for username in edf.username.tolist():
-        _udf, _edf = collect_twitter_network(username, KEYWORD)
-        udf_list.append(_udf)
-        edf_list.append(_edf)
 
-    rdf = pd.concat(edf_list)
-    rdf.to_csv("result.csv", index=False)
+    users = []
+    for i in range(DEPTH):
+        print(f"depth:{i}")
+        if i == 0:
+            users.append(edf)
+            rdf = explore_user_network(edf)
+        else:
+            users.append(rdf)
+            try:
+                rdf = explore_user_network(rdf)
+            except:
+                break
+
+    result_df = pd.concat(users)
+    result_df.to_csv("result.csv", index=False)
