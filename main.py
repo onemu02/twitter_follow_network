@@ -127,4 +127,4 @@ if __name__ == "__main__":
                 break
 
     result_df = pd.concat(users)
-    result_df.to_csv("data/result.csv", index=False)
+    result_df.to_csv("example/result.csv", index=False)
