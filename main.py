@@ -90,8 +90,8 @@ def collect_twitter_network(target_username, bio_keyword):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='search follow network using keyword in twitter')
-    parser.add_argument('username', help='twitter username', type=str)
-    parser.add_argument('keyword', help='keyword for search in bio', type=str)
+    parser.add_argument('--username', help='twitter username', type=str)
+    parser.add_argument('--keyword', help='keyword for search in bio', type=str)
     args = parser.parse_args()
 
     TARGET_USERNAME = args.username 
