@@ -8,7 +8,7 @@ urllib3.disable_warnings(InsecureRequestWarning)
 
 http = urllib3.PoolManager()
 
-BEARER_TOKEN = os.environ["TWITER_BEARER_TOKEN"]
+BEARER_TOKEN = os.environ["TWITTER_BEARER_TOKEN"]
 
 def call_api(url: str) -> dict:
     headers = {'Authorization': 'Bearer ' + BEARER_TOKEN}
