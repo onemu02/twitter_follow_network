@@ -99,17 +99,33 @@ def explore_user_network(user_dataframe):
     return pd.concat(dfs)
 
 
+def convert_json(user_csv_file_path):
+    df = pd.read_csv(user_csv_file_path, header=0)
+    nodes = list(set(df.username.tolist() + df.follower.tolist()))
+    
+    datas = {
+        "nodes": [{"id": user} for user in nodes],
+        "links": [{"source":x, "target":y} for _,x,y in df[["username", "follower"]].to_records()],
+    }
+    
+    with open("follow_network.json", "w") as f:
+        json.dump(datas, f, indent=4)
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='search follow network using keyword in twitter')
     parser.add_argument('--username', help='twitter username', type=str)
     parser.add_argument('--keyword', help='keyword for search in bio', type=str)
     parser.add_argument('--depth', help='depth of explore in social graph', default=3, type=int)
+    parser.add_argument('--path', help='save csv data path', default="example/result.csv", type=str)
     args = parser.parse_args()
 
     TARGET_USERNAME = args.username 
     KEYWORD = args.keyword
     DEPTH = args.depth
-    print(TARGET_USERNAME, KEYWORD, DEPTH)
+    PATH = args.path
+    print(TARGET_USERNAME, KEYWORD, DEPTH, PATH)
  
     udf, edf = collect_twitter_network(TARGET_USERNAME, KEYWORD)
 
@@ -127,4 +143,5 @@ if __name__ == "__main__":
                 break
 
     result_df = pd.concat(users)
-    result_df.to_csv("example/result.csv", index=False)
+    result_df.to_csv(PATH, index=False)
+    convert_json(PATH)
