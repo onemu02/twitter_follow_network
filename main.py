@@ -100,7 +100,7 @@ if __name__ == "__main__":
     udf_list = [udf]
     edf_list = [edf]
     for username in edf.username.tolist():
-         _udf, _edf = collect_twitter_network(username, KEYWORD)
+        _udf, _edf = collect_twitter_network(username, KEYWORD)
         udf_list.append(_udf)
         edf_list.append(_edf)
 
