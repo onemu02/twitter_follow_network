@@ -36,7 +36,7 @@ def get_user_detail(ids) -> dict:
 def collect_target_follow(target_user_name:str) -> dict:
     get_user_id_url = r'https://api.twitter.com/2/users/by/username/{user_name}'.format(user_name=target_user_name)
     user_id = call_api(url=get_user_id_url).get('data').get('id')
-    get_user_following_url = r'https://api.twitter.com/2/users/{id}/following?max_results=1001'.format(id=user_id)
+    get_user_following_url = r'https://api.twitter.com/2/users/{id}/following?max_results=1000'.format(id=user_id)
     result = call_api(url=get_user_following_url)
     return result
 
@@ -96,6 +96,7 @@ if __name__ == "__main__":
 
     TARGET_USERNAME = args.username 
     KEYWORD = args.keyword
+    print(TARGET_USERNAME, KEYWORD)
  
     udf, edf = collect_twitter_network(TARGET_USERNAME, KEYWORD)
     udf_list = [udf]
