@@ -1,0 +1,409 @@
+{
+    "nodes": [
+        {
+            "id": "data_nerd"
+        },
+        {
+            "id": "umashanthi"
+        },
+        {
+            "id": "hildobby_"
+        },
+        {
+            "id": "samswey"
+        },
+        {
+            "id": "ericrhare"
+        },
+        {
+            "id": "mellamomark_eth"
+        },
+        {
+            "id": "d5_dao"
+        },
+        {
+            "id": "weiwutao"
+        },
+        {
+            "id": "catherinezh"
+        },
+        {
+            "id": "kaggle"
+        },
+        {
+            "id": "rafalab"
+        },
+        {
+            "id": "tonicebrian"
+        },
+        {
+            "id": "EthBlaise"
+        },
+        {
+            "id": "juliengaillard"
+        },
+        {
+            "id": "mrogati"
+        },
+        {
+            "id": "_t_test_"
+        },
+        {
+            "id": "sandeep_pndy"
+        },
+        {
+            "id": "tavcoders"
+        },
+        {
+            "id": "shailij"
+        },
+        {
+            "id": "jrw126"
+        },
+        {
+            "id": "cryptokita"
+        },
+        {
+            "id": "retromort"
+        },
+        {
+            "id": "ASvanevik"
+        },
+        {
+            "id": "craigtutterow"
+        },
+        {
+            "id": "0xMC2"
+        },
+        {
+            "id": "pealco"
+        },
+        {
+            "id": "NowImCassie"
+        },
+        {
+            "id": "LV400_"
+        },
+        {
+            "id": "LaurenFratamico"
+        },
+        {
+            "id": "larsjaakko"
+        },
+        {
+            "id": "sagemintblue"
+        },
+        {
+            "id": "TanviSunku"
+        },
+        {
+            "id": "BlockchainETL"
+        },
+        {
+            "id": "harshagwalani"
+        },
+        {
+            "id": "FerAlmansa01"
+        },
+        {
+            "id": "EthereumETL"
+        },
+        {
+            "id": "imightbemary"
+        },
+        {
+            "id": "Chris_matcha"
+        },
+        {
+            "id": "JonnyRhea"
+        },
+        {
+            "id": "peteskomoroch"
+        },
+        {
+            "id": "asmita_vikas"
+        },
+        {
+            "id": "DarenMatsuoka"
+        },
+        {
+            "id": "dkenvdmun"
+        },
+        {
+            "id": "jaydubs50"
+        },
+        {
+            "id": "ApeFramework"
+        },
+        {
+            "id": "mjcavaretta"
+        },
+        {
+            "id": "alex_kroeger"
+        },
+        {
+            "id": "ElBarto_Crypto"
+        },
+        {
+            "id": "seidtweets"
+        },
+        {
+            "id": "m_ratsim"
+        },
+        {
+            "id": "Kyle_Rasmussen"
+        },
+        {
+            "id": "crypto_clare"
+        },
+        {
+            "id": "Max_Schmeiser"
+        }
+    ],
+    "links": [
+        {
+            "source": "retromort",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "juliengaillard",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "JonnyRhea",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "alex_kroeger",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "ASvanevik",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "cryptokita",
+            "target": "DarenMatsuoka"
+        },
+        {
+            "source": "craigtutterow",
+            "target": "retromort"
+        },
+        {
+            "source": "jaydubs50",
+            "target": "retromort"
+        },
+        {
+            "source": "mellamomark_eth",
+            "target": "retromort"
+        },
+        {
+            "source": "DarenMatsuoka",
+            "target": "retromort"
+        },
+        {
+            "source": "alex_kroeger",
+            "target": "retromort"
+        },
+        {
+            "source": "hildobby_",
+            "target": "retromort"
+        },
+        {
+            "source": "jrw126",
+            "target": "retromort"
+        },
+        {
+            "source": "ASvanevik",
+            "target": "retromort"
+        },
+        {
+            "source": "FerAlmansa01",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "0xMC2",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "NowImCassie",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "ericrhare",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "kaggle",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "shailij",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "pealco",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "catherinezh",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "imightbemary",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "LV400_",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "rafalab",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "Max_Schmeiser",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "LaurenFratamico",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "tavcoders",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "sandeep_pndy",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "samswey",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "umashanthi",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "Kyle_Rasmussen",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "sagemintblue",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "weiwutao",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "_t_test_",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "TanviSunku",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "dkenvdmun",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "harshagwalani",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "asmita_vikas",
+            "target": "juliengaillard"
+        },
+        {
+            "source": "DarenMatsuoka",
+            "target": "JonnyRhea"
+        },
+        {
+            "source": "ASvanevik",
+            "target": "JonnyRhea"
+        },
+        {
+            "source": "ApeFramework",
+            "target": "JonnyRhea"
+        },
+        {
+            "source": "m_ratsim",
+            "target": "JonnyRhea"
+        },
+        {
+            "source": "hildobby_",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "Chris_matcha",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "DarenMatsuoka",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "crypto_clare",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "d5_dao",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "ASvanevik",
+            "target": "alex_kroeger"
+        },
+        {
+            "source": "ElBarto_Crypto",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "seidtweets",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "DarenMatsuoka",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "EthBlaise",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "EthereumETL",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "larsjaakko",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "BlockchainETL",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "tonicebrian",
+            "target": "ASvanevik"
+        },
+        {
+            "source": "data_nerd",
+            "target": "cryptokita"
+        },
+        {
+            "source": "peteskomoroch",
+            "target": "cryptokita"
+        },
+        {
+            "source": "mrogati",
+            "target": "cryptokita"
+        },
+        {
+            "source": "mjcavaretta",
+            "target": "cryptokita"
+        }
+    ]
+}
