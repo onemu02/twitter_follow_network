@@ -1,3 +1,4 @@
+import csv
 import os
 import json
 import argparse
@@ -55,8 +56,9 @@ def extract_target_data(data:dict) -> dict:
             if "display_url" in data["entities"]["url"]["urls"][0].keys():
                 d["display_url"] = data["entities"]["url"]["urls"][0]["display_url"]
                 d["expanded_url"] = data["entities"]["url"]["urls"][0]["expanded_url"]
-    if "mentions" in data.keys():
-        d["mentions"] = {",".join([tmp["username"] for tmp in data["entities"]["description"]["mentions"]])}
+        if "description" in data["entities"].keys():
+            if "mentions" in data["entities"]["description"].keys():
+                d["mentions"] = ",".join([tmp["username"] for tmp in data["entities"]["description"]["mentions"]])
     return d
 
 
@@ -99,7 +101,7 @@ def explore_user_network(user_dataframe):
     return pd.concat(dfs)
 
 
-def convert_json(user_csv_file_path):
+def convert_json(user_csv_file_path, network_json_path):
     df = pd.read_csv(user_csv_file_path, header=0)
     nodes = list(set(df.username.tolist() + df.follower.tolist()))
     
@@ -108,7 +110,7 @@ def convert_json(user_csv_file_path):
         "links": [{"source":x, "target":y} for _,x,y in df[["username", "follower"]].to_records()],
     }
     
-    with open("follow_network.json", "w") as f:
+    with open(network_json_path, "w") as f:
         json.dump(datas, f, indent=4)
 
 
@@ -118,14 +120,20 @@ if __name__ == "__main__":
     parser.add_argument('--username', help='twitter username', type=str)
     parser.add_argument('--keyword', help='keyword for search in bio', type=str)
     parser.add_argument('--depth', help='depth of explore in social graph', default=3, type=int)
-    parser.add_argument('--path', help='save csv data path', default="example/result.csv", type=str)
+    parser.add_argument('--save_dir', help='dirctory path for save', default="example", type=str)
     args = parser.parse_args()
 
     TARGET_USERNAME = args.username 
     KEYWORD = args.keyword
     DEPTH = args.depth
-    PATH = args.path
-    print(TARGET_USERNAME, KEYWORD, DEPTH, PATH)
+    SAVE_DIR_PATH = args.save_dir
+    print(TARGET_USERNAME, KEYWORD, DEPTH, SAVE_DIR_PATH)
+
+    csv_path = os.path.join(SAVE_DIR_PATH, "result.csv")
+    json_path = os.path.join(SAVE_DIR_PATH, "follow_network.json")
+
+    if not os.path.isdir(SAVE_DIR_PATH):
+        os.makedirs(SAVE_DIR_PATH)
  
     udf, edf = collect_twitter_network(TARGET_USERNAME, KEYWORD)
 
@@ -143,5 +151,5 @@ if __name__ == "__main__":
                 break
 
     result_df = pd.concat(users)
-    result_df.to_csv(PATH, index=False)
-    convert_json(PATH)
+    result_df.to_csv(csv_path, index=False)
+    convert_json(csv_path, json_path)
