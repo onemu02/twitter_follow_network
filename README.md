@@ -2,6 +2,12 @@
 
 Search twitter user using relation of follow and keyword of bio.
 
+## Setting
+
+```
+export TWITTER_BEARER_TOKEN="your twitter bearer token"
+```
+
 ## Usage
 
 ```
